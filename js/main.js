@@ -1,3 +1,4 @@
+let pageDiv = document.getElementById("container");
 //CREO ARRAY CON OGGETTO PER OGNI MEMBRO DEL TEAM
 const ourTeam = [
     {
@@ -29,7 +30,7 @@ const ourTeam = [
         nome: "Barbara Ramos",
         ruolo: "Graphic Designer",
         foto:"barbara-ramos-graphic-designer.jpg"
-    },
+    }
 
 ]
 console.log("Our Team Member List:")
@@ -37,4 +38,11 @@ for (let i = 0; i < ourTeam.length; i++) {
     for (let key in ourTeam[i]) {
         console.log(`Membro numero ${[i]} ${key}: `, ourTeam[i][key]);
     }
+}
+
+//CONSOLE LOG ALTERNATIVO
+
+for (let i = 0; i < ourTeam.length; i++) {
+    const element = ourTeam[i];
+    console.log(element);   
 }
