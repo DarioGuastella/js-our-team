@@ -1,4 +1,4 @@
-let pageDiv = document.getElementById("container");
+let pageDiv = document.getElementById("row");
 //CREO ARRAY CON OGGETTO PER OGNI MEMBRO DEL TEAM
 const ourTeam = [
     {
@@ -46,8 +46,22 @@ i = 0;
 while (i < ourTeam.length) {
     const member = ourTeam[i];
     console.log(member);
-    const paragraph = document.createElement("p");
-    paragraph.innerHTML = (`Membro numero ${[i]}: Nome: ${member.nome} - Ruolo: ${member.ruolo} - Foto: ${member.foto}`);
-    pageDiv.append(paragraph);
+    const col = document.createElement("div");
+    col.classList.add("col-4");
+    const card = document.createElement("div");
+    card.classList.add("card")
+    card.classList.add("mb-4")
+    const image = document.createElement("img");
+    image.src = `${member.foto}`;
+    const memberName = document.createElement("h6");
+    memberName.innerHTML = `${member.nome}`;
+    memberName.classList.add("my-3");
+    const memberRole = document.createElement("p");
+    memberRole.innerHTML = `${member.ruolo}`;
+    card.append(image);
+    card.append(memberName);
+    card.append(memberRole);
+    col.append(card);
+    pageDiv.append(col);
     i++;
 }
