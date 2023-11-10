@@ -33,6 +33,7 @@ const ourTeam = [
     }
 
 ]
+//CONSOLE LOG ALTERNATIVO
 console.log("Our Team Member List:")
 for (let i = 0; i < ourTeam.length; i++) {
     for (let key in ourTeam[i]) {
@@ -40,19 +41,13 @@ for (let i = 0; i < ourTeam.length; i++) {
     }
 }
 
-//CONSOLE LOG ALTERNATIVO
-// let element;
-// for (let i = 0; i < ourTeam.length; i++) {
-//     element = ourTeam[i];
-//     console.log(element);   
-// }
 //STAMPO E LOGGO I MEMBRI DEL TEAM
 i = 0;
 while (i < ourTeam.length) {
-    element = ourTeam[i];
-    console.log(element);
-    let member = document.createElement("p");
-    member.innerHTML = (`Membro numero ${[i]}: Nome: ${element.nome} - Ruolo: ${element.ruolo} - Foto: ${element.foto}`);
-    pageDiv.append(member);
+    const member = ourTeam[i];
+    console.log(member);
+    const paragraph = document.createElement("p");
+    paragraph.innerHTML = (`Membro numero ${[i]}: Nome: ${member.nome} - Ruolo: ${member.ruolo} - Foto: ${member.foto}`);
+    pageDiv.append(paragraph);
     i++;
 }
