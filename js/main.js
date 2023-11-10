@@ -45,7 +45,7 @@ for (let i = 0; i < ourTeam.length; i++) {
 i = 0;
 while (i < ourTeam.length) {
     const member = ourTeam[i];
-    console.log(member);
+    
     const col = document.createElement("div");
     col.classList.add("col-4");
     const card = document.createElement("div");
@@ -63,5 +63,6 @@ while (i < ourTeam.length) {
     card.append(memberRole);
     col.append(card);
     pageDiv.append(col);
+    console.log(member);
     i++;
 }
