@@ -41,28 +41,34 @@ for (let i = 0; i < ourTeam.length; i++) {
     }
 }
 
-//STAMPO E LOGGO I MEMBRI DEL TEAM
-i = 0;
-while (i < ourTeam.length) {
-    const member = ourTeam[i];
-    
-    const col = document.createElement("div");
-    col.classList.add("col-4");
-    const card = document.createElement("div");
-    card.classList.add("card")
-    card.classList.add("mb-4")
-    const image = document.createElement("img");
-    image.src = `${member.foto}`;
-    const memberName = document.createElement("h6");
-    memberName.innerHTML = `${member.nome}`;
-    memberName.classList.add("my-3");
-    const memberRole = document.createElement("p");
-    memberRole.innerHTML = `${member.ruolo}`;
-    card.append(image);
-    card.append(memberName);
-    card.append(memberRole);
-    col.append(card);
-    pageDiv.append(col);
-    console.log(member);
-    i++;
+//STAMPO IN PAGINA LE CARDS E LOGGO I MEMBRI DEL TEAM
+
+const cards = printMemberCards();
+
+
+// FUNZIONE CARDS
+function printMemberCards () {
+    i = 0;
+    while (i < ourTeam.length) {
+        const member = ourTeam[i];
+        const col = document.createElement("div");
+        col.classList.add("col-4");
+        const card = document.createElement("div");
+        card.classList.add("card")
+        card.classList.add("mb-4")
+        const image = document.createElement("img");
+        image.src = `${member.foto}`;
+        const memberName = document.createElement("h6");
+        memberName.innerHTML = `${member.nome}`;
+        memberName.classList.add("my-3");
+        const memberRole = document.createElement("p");
+        memberRole.innerHTML = `${member.ruolo}`;
+        card.append(image);
+        card.append(memberName);
+        card.append(memberRole);
+        col.append(card);
+        pageDiv.append(col);
+        console.log(member);
+        i++;
+    }
 }
