@@ -41,8 +41,18 @@ for (let i = 0; i < ourTeam.length; i++) {
 }
 
 //CONSOLE LOG ALTERNATIVO
-
-for (let i = 0; i < ourTeam.length; i++) {
-    const element = ourTeam[i];
-    console.log(element);   
+// let element;
+// for (let i = 0; i < ourTeam.length; i++) {
+//     element = ourTeam[i];
+//     console.log(element);   
+// }
+//STAMPO E LOGGO I MEMBRI DEL TEAM
+i = 0;
+while (i < ourTeam.length) {
+    element = ourTeam[i];
+    i++;
+    console.log(element);
+    let member = document.createElement("p");
+    member.innerHTML = (`Membro numero ${[i]}: Nome: ${ourTeam[i].nome} - Ruolo: ${ourTeam[i].ruolo} - Foto: ${ourTeam[i].foto}`);
+    pageDiv.append(member);
 }
