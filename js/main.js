@@ -52,7 +52,7 @@ while (i < ourTeam.length) {
     element = ourTeam[i];
     console.log(element);
     let member = document.createElement("p");
-    member.innerHTML = (`Membro numero ${[i]}: Nome: ${ourTeam[i].nome} - Ruolo: ${ourTeam[i].ruolo} - Foto: ${ourTeam[i].foto}`);
+    member.innerHTML = (`Membro numero ${[i]}: Nome: ${element.nome} - Ruolo: ${element.ruolo} - Foto: ${element.foto}`);
     pageDiv.append(member);
     i++;
 }
