@@ -50,9 +50,9 @@ for (let i = 0; i < ourTeam.length; i++) {
 i = 0;
 while (i < ourTeam.length) {
     element = ourTeam[i];
-    i++;
     console.log(element);
     let member = document.createElement("p");
     member.innerHTML = (`Membro numero ${[i]}: Nome: ${ourTeam[i].nome} - Ruolo: ${ourTeam[i].ruolo} - Foto: ${ourTeam[i].foto}`);
     pageDiv.append(member);
+    i++;
 }
