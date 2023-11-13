@@ -39,36 +39,22 @@ for (let i = 0; i < ourTeam.length; i++) {
     for (let key in ourTeam[i]) {
         console.log(`Membro numero ${[i]} ${key}: `, ourTeam[i][key]);
     }
+    //STAMPO IN PAGINA LE CARDS E LOGGO I MEMBRI DEL TEAM
+    const member = ourTeam[i];
+    const col = document.createElement("div");
+    col.classList.add("col-4");
+    const card = document.createElement("div");
+    card.classList.add("card", "mb-4")
+    const image = document.createElement("img");
+    image.src = `${member.foto}`;
+    const memberName = document.createElement("h6");
+    memberName.innerHTML = `${member.nome}`;
+    memberName.classList.add("my-3");
+    const memberRole = document.createElement("p");
+    memberRole.innerHTML = `${member.ruolo}`;
+    card.append(image, memberName, memberRole);
+    col.append(card);
+    pageDiv.append(col);
+    console.log(member);
 }
 
-//STAMPO IN PAGINA LE CARDS E LOGGO I MEMBRI DEL TEAM
-
-const cards = printMemberCards();
-
-
-// FUNZIONE CARDS
-function printMemberCards () {
-    i = 0;
-    while (i < ourTeam.length) {
-        const member = ourTeam[i];
-        const col = document.createElement("div");
-        col.classList.add("col-4");
-        const card = document.createElement("div");
-        card.classList.add("card")
-        card.classList.add("mb-4")
-        const image = document.createElement("img");
-        image.src = `${member.foto}`;
-        const memberName = document.createElement("h6");
-        memberName.innerHTML = `${member.nome}`;
-        memberName.classList.add("my-3");
-        const memberRole = document.createElement("p");
-        memberRole.innerHTML = `${member.ruolo}`;
-        card.append(image);
-        card.append(memberName);
-        card.append(memberRole);
-        col.append(card);
-        pageDiv.append(col);
-        console.log(member);
-        i++;
-    }
-}
